@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Developing Data Products - Project</title>
+  <meta name="description" content="">
+  <meta name="author" content="Kelvin Han">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h2>Interactive NOAA storm data explorer</h2>
+  <p>Kelvin Han</p>
+
+</section>
+<section class='class' data-state='' id='id'>
+  <h2>The application</h2>
+  <p>The Interactive NOAA data explorer is available at
+<a href="https://kelvin.shinyapps.io/DevDataProd">https://kelvin.shinyapps.io/DevDataProd</a></p>
+
+<p>This application enables the user to select inputs and presents the output on an interactive map or on a table.</p>
+
+</section>
+<section class='class' data-state='' id='id'>
+  <h2>The data</h2>
+  <p>The data is from the US National Oceanic and Atmospheric Administration (NOAA) storm database.</p>
+
+<p>The dataset is available at 
+<a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2</a></p>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>A peek at the Post-Processed Data</h2>
+  <pre><code class="r">head(dataFile)
+</code></pre>
+
+<pre><code>##    YEAR STATE EventName FATALITIES INJURIES propDmgValue cropDmgValue
+## 1: 1950    AL   Tornado          0       15        27500            0
+## 2: 1950    AR   Tornado          2       49       860030            0
+## 3: 1950    CO   Tornado          0        1        50000            0
+## 4: 1950    CT   Tornado          0        3       252500            0
+## 5: 1950    FL   Tornado          0        0        82500            0
+## 6: 1950    GA   Tornado          0        1        32500            0
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h2>Leaflet</h2>
+  <p>This application uses Leaflet, an open-source JavaScript library, for the interactive map. More information is available at the link below.</p>
+
+<p><a href="https://rstudio.github.io/leaflet/">https://rstudio.github.io/leaflet/</a></p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'default', 
+    transition: Reveal.getQueryHash().transition || 'default', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
